@@ -1,0 +1,7 @@
+{
+  "name": "app-solarmuda",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue-vite"
+}
