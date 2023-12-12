@@ -46,8 +46,8 @@
                         </ion-col>
                     </ion-row>
                 </ion-grid>
-                <div>
-                    <ion-list>
+                <div class="ion-padding">
+                    <ion-list style="margin: 0;padding: 0;">
                         <ion-item>
                             <ion-select aria-label="fruit" @ionChange="onSelectDevice($event)" placeholder="Select Device">
                                 <ion-select-option v-for="(row, id) in device_list" :value="row.id_device">{{
@@ -70,19 +70,19 @@
                     <ion-card style="margin-top: 10px;">
                         <ion-card-header>
                             <ion-card-title>{{ selected_device?.device_pv_capacity }}</ion-card-title>
-                            <ion-card-subtitle>PV Capasity</ion-card-subtitle>
+                            <ion-card-subtitle><ion-icon :icon="sunnyOutline"></ion-icon> PV Capasity</ion-card-subtitle>
                         </ion-card-header>
                     </ion-card>
                     <ion-card style="margin-top: 10px;">
                         <ion-card-header>
                             <ion-card-title>{{ selected_device?.device_pv_capacity }}</ion-card-title>
-                            <ion-card-subtitle>Total Kwh</ion-card-subtitle>
+                            <ion-card-subtitle><ion-icon :icon="flashOutline"></ion-icon> Total Kwh</ion-card-subtitle>
                         </ion-card-header>
                     </ion-card>
                     <ion-card style="margin-top: 10px;">
                         <ion-card-header>
                             <ion-card-title>{{ currencyIDR(selected_device.data_logs?.log_record_TotE * selected_device?.device_price_perkwh) }}</ion-card-title>
-                            <ion-card-subtitle>Total revenue</ion-card-subtitle>
+                            <ion-card-subtitle><ion-icon :icon="wallet"></ion-icon> Total revenue</ion-card-subtitle>
                         </ion-card-header>
                     </ion-card>
                 </div>
@@ -92,7 +92,7 @@
 </template>
   
 <script lang="ts" setup>
-import { idCard, personCircleOutline } from 'ionicons/icons';
+import { flashOutline, sunnyOutline, wallet,personCircleOutline } from 'ionicons/icons';
 import { IonButtons, IonContent, IonCardContent,IonCardTitle, IonCard, IonCardHeader, IonCardSubtitle, IonList, IonItem, IonSelect, IonSelectOption, IonGrid, IonRow, IonCol, IonButton, IonText, IonHeader, IonIcon, IonMenu, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
 import api from '@/helper/api';
 import router from '@/router';
